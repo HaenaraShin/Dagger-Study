@@ -3,6 +3,7 @@ package dev.haenara.daggerstudy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import dagger.Component
+import dagger.MembersInjector
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +15,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getStringFromDagger(): String {
-        val component = DaggerHelloWorldComponent.create()
+        val component:HelloWorldComponent 
+                = DaggerHelloWorldComponent.create()
         return component.getString()
     }
 
